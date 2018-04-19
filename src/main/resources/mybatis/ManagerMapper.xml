@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jp.co.tlzs.mapper.ManagerMapper" >
+    <!-- 定义商品查询的sql片段，就是商品查询条件 -->
+    <select id="get">
+        select * from t_user where id = ${id}
+    </select>
+
+    <select id="find">
+        select * from t_user
+
+    </select>
+
+    <select id="findByAccount" parameterType="java.lang.String" resultType="jp.co.tlzs.po.Manager">
+        select * from t_manager where account = #{account}
+    </select>
+
+    <insert id="insertUser" parameterType="jp.co.tlzs.po.User">
+        insert into t_user(
+        password,
+        account
+        )
+        values(
+        #{password},
+        #{account})
+
+    </insert>
+</mapper>

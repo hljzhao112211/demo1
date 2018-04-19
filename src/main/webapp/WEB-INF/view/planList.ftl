@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Tables</title>
+<title>Index</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -11,7 +11,7 @@
 	<!-- Custom CSS -->
 <link href="../../static/css/style.css" rel='stylesheet' type='text/css' />
 	<!-- Graph CSS -->
-<link href="../../static/css/font-awesome.css" rel="stylesheet"> 
+<link href="../../static/css/font-awesome.css" rel="stylesheet">
 	<!-- jQuery -->
 <link href='https://fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
 	<!-- lined-icons -->
@@ -19,7 +19,7 @@
 	<!-- /js -->
 <script src="../../static/js/jquery-1.10.2.min.js"></script>
 <!-- //js-->
-</head> 
+</head>
 <body>
    <div class="page-container">
    <!--/content-inner-->
@@ -29,12 +29,28 @@
 						<!--outter-wp-->
 							<div class="outter-wp">
 									<div class="graph-visual tables-main">
-													<h3 class="inner-tittle two">Colored Rows Table </h3>${message!'111'}  <#if user?has_content><a class="btn blue" href="/plan/">add plan</a><#else> <a class="btn blue" href="/login/">Blue Button</a></#if>
+													<h3 class="inner-tittle two">プラン一覧</h3><#if user?has_content><a class="btn blue" href="/plan/addPlan">プラン追加</a><#else> <a class="btn blue" href="/login">登録</a></#if>
 														  <div class="graph">
 															<div class="tables">
-																<table class="table"> <thead> <tr> <th>#</th> <th>Column heading</th> <th>Column heading</th> <th>Column heading</th> </tr> </thead> <tbody> <tr class="active"> <th scope="row">1</th> <td>Column content</td> <td>Column content</td> <td>Column content</td> </tr> <tr> <th scope="row">2</th> <td>Column content</td> <td>Column content</td> <td>Column content</td> </tr> <tr class="success"> <th scope="row">3</th> <td>Column content</td> <td>Column content</td> <td>Column content</td> </tr> <tr> <th scope="row">4</th> <td>Column content</td> <td>Column content</td> <td>Column content</td> </tr> <tr class="info"> <th scope="row">5</th> <td>Column content</td> <td>Column content</td> <td>Column content</td> </tr> <tr> <th scope="row">6</th> <td>Column content</td> <td>Column content</td> <td>Column content</td> </tr> <tr class="warning"> <th scope="row">7</th> <td>Column content</td> <td>Column content</td> <td>Column content</td> </tr> <tr> <th scope="row">8</th> <td>Column content</td> <td>Column content</td> <td>Column content</td> </tr> <tr class="danger"> <th scope="row">9</th> <td>Column content</td> <td>Column content</td> <td>Column content</td> </tr> </tbody> </table> 
+																<table class="table">
+																	<thead> <tr> <th>#</th> <th>名前</th> <th>開始時間</th> <th>終了時間</th> <th>目的地</th><th>目的</th></tr> </thead>
+																	<tbody>
+                                                                    <#if planList?exists >
+																		<#list planList as list>
+																			<tr class="active">
+																				<th scope="row">${list.id!}</th>
+                                                                                <td>${list.userName!}</td>
+																				<td>${list.fromDate!}</td>
+																				<td>${list.toDate!}</td>
+																				<td>${list.destination!}</td>
+																				<td>${list.purpose!}</td>
+																			</tr>
+																		</#list>
+																	</#if>
+																	</tbody>
+																</table>
 															</div>
-												
+
 													</div>
 
 										</div>
@@ -50,8 +66,8 @@
 							</div>
 							<script>
 							var toggle = true;
-										
-							$(".sidebar-icon").click(function() {                
+
+							$(".sidebar-icon").click(function() {
 							  if (toggle)
 							  {
 								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
@@ -64,7 +80,7 @@
 								  $("#menu span").css({"position":"relative"});
 								}, 400);
 							  }
-											
+
 											toggle = !toggle;
 										});
 							</script>
