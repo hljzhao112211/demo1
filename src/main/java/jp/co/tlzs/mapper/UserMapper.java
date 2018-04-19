@@ -1,9 +1,9 @@
 package jp.co.tlzs.mapper;
 
 
-import jp.co.tlzs.po.User;
-
 import java.util.List;
+
+import jp.co.tlzs.po.User;
 
 public interface UserMapper{
     public User get(Long id);
@@ -13,4 +13,10 @@ public interface UserMapper{
     public User findByAccount(String account);
 
     public boolean insertUser(User user);
+
+    public List<User> getUser();
+
+    public boolean updateUser(User user);
+
+    public boolean deleteUser(Long id);
 }

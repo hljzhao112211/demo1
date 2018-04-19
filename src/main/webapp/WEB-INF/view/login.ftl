@@ -1,35 +1,33 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<html style="overflow: hidden;"><head>
 <title>Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link href="../../static/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="../../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <!-- Custom CSS -->
-<link href="../../static/css/style.css" rel='stylesheet' type='text/css' />
+<link href="../../static/css/style.css" rel="stylesheet" type="text/css">
 <!-- Graph CSS -->
 <link href="../../static/css/font-awesome.css" rel="stylesheet">
 <!-- jQuery -->
-<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400" rel="stylesheet" type="text/css">
 <!-- lined-icons -->
-<link rel="stylesheet" href="../../static/css/icon-font.min.css" type='text/css' />
+<link rel="stylesheet" href="../../static/css/icon-font.min.css" type="text/css">
 <!-- //lined-icons -->
 <script src="../../static/js/jquery-1.10.2.min.js"></script>
 <!--clock init-->
-</head> 
-<body>
+</head>
+<body style="">
 								<!--/login-->
-								
+
 									   <div class="error_page">
 												<!--/login-top-->
-												
+
 													<div class="error-top">
-													<h2 class="inner-tittle page">Augment</h2>
+													<h2 class="inner-tittle page"></h2>
 													    <div class="login">
-														<h3 class="inner-tittle t-inner">Login</h3>
+														<h3 class="inner-tittle t-inner">社員ログイン</h3>
 																<div class="buttons login">
 																			<ul>
 																				<li><a href="#" class="hvr-sweep-to-right">Facebook</a></li>
@@ -37,42 +35,42 @@
 																				<div class="clearfix"></div>
 																			</ul>
 																		</div>
-																<form action="/login" method="post">
-																		<input type="text" name="account" value="${account!}" class="text" placeholder="要显示的文字" >
-																		<input type="password" name="password" value="${password!}">
-																		<div class="submit"><input type="submit" onclick="myFunction()" value="Login" ></div>
-																	${message!}
+																<form action="/" method="post">
+																		<input type="text" name="account" value="${account!}" class="text" placeholder="ユーザーID">
+																		<input type="password" name="password" value="${password!}" placeholder="パスワード">
+																		<div class="submit"><input type="submit" onclick="myFunction()" value="登録"></div>
+																		${message!}
 																		<div class="clearfix"></div>
-																		
+
 																		<div class="new">
-																			<p><label class="checkbox11"><input type="checkbox" name="checkbox"><i> </i>Forgot Password ?</label></p>
-																			<p class="sign">Do not have an account ? <a href="/login/registr">register</a></p>
+																			<p class="sign"><a href="/register">新規登録</a></p>
+																			<p class="sign"><a href="/manager">管理者ログイン</a></p>
 																			<div class="clearfix"></div>
 																		</div>
 																	</form>
 														</div>
 
-														
+
 													</div>
-													
-													
+
+
 												<!--//login-top-->
 										   </div>
-						
+
 										  	<!--//login-->
 										    <!--footer section start-->
 										<div class="footer">
 												<div class="error-btn">
-															<a class="read fourth" href="index.html">Return to Home</a>
+
 															</div>
-										   <p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+
 										</div>
 									<!--footer section end-->
 									<!--/404-->
 <!--js -->
 <script src="../../static/js/jquery.nicescroll.js"></script>
-<script src="../../static/js/scripts.js"></script>
+<script src="../../static/js/scripts.js"></script><div id="ascrail2000" class="nicescroll-rails" style="width: 5px; z-index: 1000; background: rgb(0, 37, 97); cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;"><div style="position: relative; top: 24px; float: right; width: 5px; height: 525px; background-color: rgb(0, 198, 215); border: 0px; background-clip: padding-box; border-radius: 10px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 5px; z-index: 1000; background: rgb(0, 37, 97); position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;"><div style="position: relative; top: 0px; height: 5px; width: 522px; background-color: rgb(0, 198, 215); border: 0px; background-clip: padding-box; border-radius: 10px;"></div></div>
 <!-- Bootstrap Core JavaScript -->
    <script src="../../static/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+</body></html>

@@ -14,7 +14,7 @@
     <select id="findByAccount" parameterType="java.lang.String" resultType="jp.co.tlzs.po.User">
         select * from t_user where account = #{account}
     </select>
-    
+
     <insert id="insertUser" parameterType="jp.co.tlzs.po.User">
         insert into t_user(
         password,
@@ -25,4 +25,16 @@
         #{account})
 
     </insert>
+
+    <select id="getUser" resultType="jp.co.tlzs.po.User">
+        SELECT * FROM t_user
+    </select>
+
+    <update id="updateUser"  parameterType="jp.co.tlzs.po.User">
+    	UPDATE t_user SET name=#{name},gender=#{gender},account=#{account},password=#{password},department=#{department},duty=#{duty},phone=#{phone},status=#{status} where id=${id}
+    </update>
+
+    <delete id="deleteUser" parameterType="java.lang.Long">
+    	delete from t_user where id = #{id}
+    </delete>
 </mapper>
