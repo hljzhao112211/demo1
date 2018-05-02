@@ -29,17 +29,19 @@
 													    <div class="login">
 														<h3 class="inner-tittle t-inner">社員新規登録</h3>
 																<form action="/register" method="post">
-																		<input type="text" class="text" name="account" value="ユーザーID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address';}">
-																		<input type="password" name="password" value="パスワード" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
-																		<input type="password" name="rpassword" value="パスワード確認" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+																		<input type="text" class="text" name="account" value="${account!}" placeholder="ユーザーID">
+																		<input type="password" name="password" value="${password!}" placeholder="パスワード">
+																		<input type="password" name="rpassword" value="${rpassword!}" placeholder="パスワード再入力">
 																		<div class="sign-up">
 																					<input type="reset" value="クリア">
 																					<input type="submit" onclick="myFunction()" value="登録">
 
 																		</div>
+
 																		<div class="clearfix"></div>
 
 																		<div class="new">
+																		<div>${message!}</div>
 
 																		</div>
 																	</form>

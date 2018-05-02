@@ -29,11 +29,20 @@
 						<!--outter-wp-->
 							<div class="outter-wp">
 									<div class="graph-visual tables-main">
-													<h3 class="inner-tittle two">プラン一覧</h3><#if user?has_content><a class="btn blue" href="/plan/addPlan">プラン追加</a><#else> <a class="btn blue" href="/login">登録</a></#if>
+													<h3 class="inner-tittle two">プラン一覧</h3><#if loginUser?has_content><a class="btn blue" href="/plan/addPlan">プラン追加</a><#else> <a class="btn blue" href="">登録</a></#if>
 														  <div class="graph">
 															<div class="tables">
 																<table class="table">
-																	<thead> <tr> <th>#</th> <th>名前</th> <th>開始時間</th> <th>終了時間</th> <th>目的地</th><th>目的</th></tr> </thead>
+																	<thead>
+																	<tr>
+																	<th>#</th>
+																	<th>名前</th>
+																	<th>開始時間</th>
+																	 <th>終了時間</th>
+																	 <th>目的地</th>
+																	 <th>目的</th>
+																	 </tr>
+																	 </thead>
 																	<tbody>
                                                                     <#if planList?exists >
 																		<#list planList as list>

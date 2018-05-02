@@ -34,15 +34,15 @@ public class LoginController {
         model.addAttribute("password",password);
         User user = userService.login(account);
         if(user == null){
-            model.addAttribute("message", "账号不存在");
+            model.addAttribute("message", "ユーザ名は存在しません");
             return "login";
         }
         if(user.getPassword().equals(password)){
-            request.getSession().setAttribute("user",user);
+            request.getSession().setAttribute("loginUser",user);
             request.getSession().setAttribute("username",user.getName());
             return "redirect:/plan/showPlan";
         }else {
-            model.addAttribute("message", "wrong password");
+            model.addAttribute("message", "パスワードエラー");
         }
         return "login";
     }
@@ -54,16 +54,23 @@ public class LoginController {
     }
 
     @RequestMapping(value = "register",method = RequestMethod.POST)
-    public String registrForm(User user){
+    public String registrForm(Model model,User user, HttpServletRequest request){
         String account=user.getAccount();
         String password=user.getPassword();
-       // user.setDepartment("it depart");
-        if(account!="" && password!=""){
-           userService.register(user);
+        String rpassword = request.getParameter("rpassword");
 
+        if(account!="" && password!="" && rpassword!="" && account!="ユーザーID" && password!="パスワード" && rpassword!="パスワード再入力"){
+           userService.register(user);
+           return "login";
+
+        }else {
+        	 model.addAttribute("account",account);
+             model.addAttribute("password",password);
+             model.addAttribute("rpassword",rpassword);
+        	 model.addAttribute("message", "未入力があります");
+        	 return "register";
         }
-        //model.addAttribute("message","bbbbb");
-        return "login";
+
     }
 
     @RequestMapping(value = "updateUser",method = RequestMethod.POST)
@@ -75,7 +82,7 @@ public class LoginController {
         return "redirect:/userList";
     }
 
-    @RequestMapping(value = "deleteUser",method = RequestMethod.POST)
+    @RequestMapping(value = "deleteUser",method = RequestMethod.GET)
     public String deleteUser(User user/*@RequestBody User user*/){
         //model.addAttribute("message","bbbbb");
     	//System.out.println("1");

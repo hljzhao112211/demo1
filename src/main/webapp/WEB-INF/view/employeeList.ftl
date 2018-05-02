@@ -33,7 +33,20 @@
 														  <div class="graph">
 															<div class="tables">
 																<table class="table">
-																	<thead> <tr> <th>#</th> <th>名前</th> <th>性別</th><th>ユーザーID</th> <th>パスワード</th> <th>部署</th><th>職務</th> <th>電話番号</th> <th>状態</th></tr> </thead>
+																	<thead>
+																	<tr>
+																	<th>#</th>
+																	 <th>名前</th>
+																	  <th>性別</th>
+																	  <th>ユーザーID</th>
+																	  <th>パスワード</th>
+																	  <th>部署</th>
+																	  <th>職務</th>
+																	  <th>電話番号</th>
+																	   <th>状態</th>
+																	   <th> </th>
+																	   </tr>
+																	   </thead>
 																	<tbody>
                                                                     <#if userList?exists >
 																		<#list userList as list>
@@ -49,11 +62,7 @@
 																				<td><input type="text" name="duty" size="10" value=${list.duty!}></td>
 																				<td><input type="text" name="phone" size="15" value=${list.phone!}></td>
 																				<td><input type="text" name="status" size="10" value=${list.status!}></td>
-																				<td><input type="submit" value="更新"></td>
-																			</form>
-																			<form action="/deleteUser" method="post">
-																				<input type="hidden" name="id" value=${list.id!}>
-																				<td><input type="submit" value="削除"></td>
+																				<td nowrap="nowrap"><input type="submit" value="更新"> <a href="/deleteUser?id=${list.id!}">削除</a></td>
 																			</form>
 																			</tr>
 																		</#list>

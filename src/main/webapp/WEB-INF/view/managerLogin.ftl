@@ -36,8 +36,8 @@
 																			</ul>
 																		</div>
 																<form action="/manager" method="post">
-																		<input type="text" name="account" value="${account!}" class="text" placeholder="要显示的文字">
-																		<input type="password" name="password" value="${password!} placeholder="要显示的文字"">
+																		<input type="text" name="account" value="${account!}" class="text" placeholder="ユーザーID">
+																		<input type="password" name="password" value="${password!} placeholder="パスワード">
 																		<div class="submit"><input type="submit" onclick="myFunction()" value="登録"></div>
 																		${message!}
 																		<div class="clearfix"></div>
